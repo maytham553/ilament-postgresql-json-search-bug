@@ -16,7 +16,7 @@ setup: install start
 	@echo "⏳ Waiting for PostgreSQL to be ready..."
 	@sleep 5
 	./vendor/bin/sail artisan migrate:fresh --seed
-	@echo "✅ Setup complete! Access admin at http://localhost:8080/admin"
+	@echo "✅ Setup complete! Access admin at http://localhost:8055/admin"
 	@echo "   Login: admin@example.com / password"
 
 # Install dependencies and configure environment
