@@ -13,6 +13,8 @@ help:
 # Complete setup - runs all steps
 setup: install start
 	@echo "🚀 Setting up database..."
+	@echo "⏳ Waiting for PostgreSQL to be ready..."
+	@sleep 5
 	./vendor/bin/sail artisan migrate:fresh --seed
 	@echo "✅ Setup complete! Access admin at http://localhost:8080/admin"
 	@echo "   Login: admin@example.com / password"
@@ -23,7 +25,7 @@ install:
 	composer install
 	@echo "🔧 Configuring environment..."
 	cp .env.example .env
-	./vendor/bin/sail artisan key:generate
+	php artisan key:generate
 	@echo "✅ Installation complete!"
 
 # Start Docker containers
